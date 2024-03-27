@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alpaca Image Generator Website</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    </head>
+    <body>
+        <header id="header">
+            <h1>Alpaca generator</h1>
+        </header>
+        <main id="main">
+            <section class="section">
+                <div id="alpaca-container">
+                    <img id="backgrounds" src="">
+                    <img id="ears" src="images/ears/default.png">
+                    <img id="neck" src="images/neck/default.png">
+                    <img id="nose" src="images/nose.png" />
+                    <img id="mouth" src="images/mouth/default.png">
+                    <img id="hair" src="images/hair/default.png">
+                    <img id="accessories" src="">
+                    <img id="eyes" src="images/eyes/default.png">
+                    <img id="leg" src="images/leg/default.png">
+                </div>
+                <div id="buttons">
+                    <button id="random" class="buttons"><i class="fa-solid fa-shuffle"></i>Random</button>
+                    <a id="download" class="buttons"><i class="fa-solid fa-download"></i>Download</a>
+                </div>
+            </section>
+            <section class="section">
+                <form id="alpaca-customizer">                
+                    <fieldset>
+                        <legend>Accessorize the alpaca's</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="checkbox" name="accessory" id="hair" value="hair">
+                                <label class="accessory" for="hair">Hair</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="checkbox" name="accessory" id="ears" value="ears">
+                                <label class="accessory" for="ears">Ears</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="checkbox" name="accessory" id="eyes" value="eyes">
+                                <label class="accessory" for="eyes">Eyes</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="checkbox" name="accessory" id="mouth" value="mouth">
+                                <label class="accessory" for="mouth">Mouth</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="checkbox" name="accessory" id="neck" value="neck">
+                                <label class="accessory" for="neck">Neck</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="checkbox" name="accessory" id="leg" value="leg">
+                                <label class="accessory" for="leg">Leg</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="checkbox" name="accessory" id="accessories" value="accessories">
+                                <label class="accessory" for="accessories">Accessories</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="checkbox" name="accessory" id="backgrounds" value="backgrounds">
+                                <label class="accessory" for="backgrounds">Backgrounds</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="hair-style" class="styles-fieldset">
+                        <legend>Hairstyle</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="radio" name="hair" id="default-hair" checked>
+                                <label class="styles hair selected" for="default-hair">Default</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="hair" id="curls-hair">
+                                <label class="styles hair" for="curls-hair">Curls</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="hair" id="short-hair">                        
+                                <label class="styles hair" for="short-hair">Short</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="hair" id="bang-hair">
+                                <label class="styles hair" for="bang-hair">Bang</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="hair" id="elegant-hair">
+                                <label class="styles hair" for="elegant-hair">Elegant</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="hair" id="quiff-hair">
+                                <label class="styles hair" for="quiff-hair">Quiff</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="hair" id="fancy-hair">
+                                <label class="styles hair" for="fancy-hair">Fancy</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="ears-style" class="styles-fieldset">
+                        <legend>Ears Style</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="radio" name="ears" id="default-ears" checked>
+                                <label class="styles ears selected" for="default-ears">Default</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="ears" id="tilt-backward-ears">
+                                <label class="styles ears" for="tilt-backward-ears">Tilt Backward</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="ears" id="tilt-forward-ears">
+                                <label class="styles ears" for="tilt-forward-ears">Tilt Forward</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="eyes-style" class="styles-fieldset">
+                        <legend>Eyes Style</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="radio" name="eyes" id="default-eyes" checked>
+                                <label class="styles eyes selected" for="default-eyes">Default</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="eyes" id="angry-eyes">
+                                <label class="styles eyes" for="angry-eyes">Angry</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="eyes" id="naughty-eyes">
+                                <label class="styles eyes" for="naughty-eyes">Naughty</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="eyes" id="panda-eyes">
+                                <label class="styles eyes" for="panda-eyes">Panda</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="eyes" id="smart-eyes">
+                                <label class="styles eyes" for="smart-eyes">Smart</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="eyes" id="star-eyes">
+                                <label class="styles eyes" for="star-eyes">Star</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="mouth-style" class="styles-fieldset">
+                        <legend>Mouth Style</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="radio" name="mouth" id="default-mouth" checked>
+                                <label class="styles mouth selected" for="default-mouth">Default</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="mouth" id="astonished-mouth">
+                                <label class="styles mouth" for="astonished-mouth">Astonished</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="mouth" id="eating-mouth">
+                                <label class="styles mouth" for="eating-mouth">Eating</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="mouth" id="laugh-mouth">
+                                <label class="styles mouth" for="laugh-mouth">Laugh</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="mouth" id="tongue-mouth">
+                                <label class="styles mouth" for="tongue-mouth">Tongue</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="neck-style" class="styles-fieldset">
+                        <legend>Neck Style</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="radio" name="neck" id="default-neck" checked>
+                                <label class="styles neck selected" for="default-neck">Default</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="neck" id="bend-backward-neck">
+                                <label class="styles neck" for="bend-backward-neck">Bend Backward</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="neck" id="bend-forward-neck">
+                                <label class="styles neck" for="bend-forward-neck">Bend Forward</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="neck" id="thick-neck">
+                                <label class="styles neck" for="thick-neck">Thick</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="leg-style" class="styles-fieldset">
+                        <legend>Leg Style</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="radio" name="leg" id="default-leg" checked>
+                                <label class="styles leg selected" for="default-leg">Default</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="leg" id="bubble-tea-leg">
+                                <label class="styles leg" for="bubble-tea-leg">Bubble Tea</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="leg" id="cookie-leg">
+                                <label class="styles leg" for="cookie-leg">Cookie</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="leg" id="game-console-leg">
+                                <label class="styles leg" for="game-console-leg">Game Console</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="leg" id="tilt-backward-leg">
+                                <label class="styles leg" for="tilt-backward-leg">Tilt Backward</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="leg" id="tilt-forward-leg">
+                                <label class="styles leg" for="tilt-forward-leg">Tilt Forward</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="accessories-style" class="styles-fieldset">
+                        <legend>Accessories Style</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="radio" name="accessories" id="earings-accessories">
+                                <label class="styles accessories" for="earings-accessories">Earings</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="accessories" id="flower-accessories">
+                                <label class="styles accessories" for="flower-accessories">Flower</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="accessories" id="glasses-accessories">
+                                <label class="styles accessories" for="glasses-accessories">Glasses</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="accessories" id="headphone-accessories">
+                                <label class="styles accessories" for="headphone-accessories">Headphone</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="backgrounds-style" class="styles-fieldset">
+                        <legend>Backgrounds Style</legend>
+                        <div class="input-container">
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="blue50-backgrounds">
+                                <label class="styles backgrounds" for="blue50-backgrounds">Blue 50</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="blue60-backgrounds">
+                                <label class="styles backgrounds" for="blue60-backgrounds">Blue 60</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="blue70-backgrounds">
+                                <label class="styles backgrounds" for="blue70-backgrounds">Blue 70</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="darkblue30-backgrounds">
+                                <label class="styles backgrounds" for="darkblue30-backgrounds">Darkblue 30</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="darkblue50-backgrounds">
+                                <label class="styles backgrounds" for="darkblue50-backgrounds">Darkblue 50</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="darkblue70-backgrounds">
+                                <label class="styles backgrounds" for="darkblue70-backgrounds">Darkblue 70</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="green50-backgrounds">
+                                <label class="styles backgrounds" for="green50-backgrounds">Green 50</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="green60-backgrounds">
+                                <label class="styles backgrounds" for="green60-backgrounds">Green 60</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="green70-backgrounds">
+                                <label class="styles backgrounds" for="green70-backgrounds">Green 70</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="grey40-backgrounds">
+                                <label class="styles backgrounds" for="grey40-backgrounds">Grey 40</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="grey70-backgrounds">
+                                <label class="styles backgrounds" for="grey70-backgrounds">Grey 70</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="grey80-backgrounds">
+                                <label class="styles backgrounds" for="grey80-backgrounds">Grey 80</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="red50-backgrounds">
+                                <label class="styles backgrounds" for="red50-backgrounds">Red 50</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="red60-backgrounds">
+                                <label class="styles backgrounds" for="red60-backgrounds">Red 60</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="red70-backgrounds">
+                                <label class="styles backgrounds" for="red70-backgrounds">Red 70</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="yellow50-backgrounds">
+                                <label class="styles backgrounds" for="yellow50-backgrounds">Yellow 50</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="yellow60-backgrounds">
+                                <label class="styles backgrounds" for="yellow60-backgrounds">Yellow 60</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="radio" name="backgrounds" id="yellow70-backgrounds">
+                                <label class="styles backgrounds" for="yellow70-backgrounds">Yellow 70</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <script type="module" src="script.js"></script>
+    </body>
+</html>

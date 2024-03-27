@@ -1,0 +1,126 @@
+:root {
+    --main-color1: #03045e;
+    --main-color2: #0077b6;
+    --main-color3: #00b4d8;
+    --main-color4: #90e0ef;
+    --main-color5: #caf0f8;
+    --neutral-color1: #000000;
+    --neutral-color2: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 2rem 6rem;
+    background-color: var(--main-color5);
+}
+
+header h1 {
+    font-weight: 800;
+    color: var(--main-color1);
+    text-transform: uppercase;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+#alpaca-container {
+    background-color: var(--main-color1);
+    position: relative;
+    aspect-ratio: 1 / 1;
+}
+
+#alpaca-container img {
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: scale(.9);
+    transform-origin: bottom;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 24px 0;
+    column-gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--neutral-color2);
+    border: none;
+    padding: 10px 30px;
+    font-weight: bold;
+    column-gap: 5px;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+fieldset {
+    border: none;
+}
+
+.styles-fieldset {
+    display: none;
+}
+
+legend {
+    color: var(--main-color1);
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px 10px;
+}
+
+.input-group {
+    width: auto;
+}
+
+input[type='radio'], input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    padding: 10px 30px;
+    color: var(--main-color3);
+    border: 2px solid var(--main-color3);
+    border-radius: 24px;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+label:active {
+    color: var(--main-color2);
+    border: 2px solid var(--main-color2);   
+}
+
+label.selected {    
+    color: var(--main-color4);
+    border: 2px solid var(--main-color1);
+    background-color: var(--main-color1);
+}
