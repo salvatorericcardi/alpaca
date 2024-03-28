@@ -1,9 +1,4 @@
 :root {
-    --main-color1: #03045e;
-    --main-color2: #0077b6;
-    --main-color3: #00b4d8;
-    --main-color4: #90e0ef;
-    --main-color5: #caf0f8;
     --neutral-color1: #000000;
     --neutral-color2: #ffffff;
 }
@@ -25,7 +20,7 @@ body {
 
 header h1 {
     font-weight: 800;
-    color: var(--main-color1);
+    color: var(--neutral-color1);
     text-transform: uppercase;
 }
 
@@ -36,7 +31,7 @@ main {
 }
 
 #alpaca-container {
-    background-color: var(--main-color1);
+    background-color: var(--neutral-color1);
     position: relative;
     aspect-ratio: 1 / 1;
 }
@@ -88,7 +83,7 @@ fieldset {
 }
 
 legend {
-    color: var(--main-color1);
+    color: var(--neutral-color1);
     text-transform: uppercase;
     font-weight: 800;
     margin: 10px 0;
@@ -111,8 +106,9 @@ input[type='radio'], input[type="checkbox"] {
 
 label {
     padding: 10px 30px;
-    color: var(--main-color3);
-    border: 2px solid var(--main-color3);
+    color: var(--neutral-color1);
+    background-color: rgb(229 231 235/1);
+    border: 2px solid rgb(209 213 219/1);
     border-radius: 24px;
 }
 
@@ -121,12 +117,13 @@ label:hover {
 }
 
 label:active {
-    color: var(--main-color2);
-    border: 2px solid var(--main-color2);   
+    color: var(--neutral-color1);
+    background-color: rgb(229 231 235/1);
+    border: 2px solid rgb(209 213 219/1);   
 }
 
 label.selected {    
-    color: var(--main-color4);
-    border: 2px solid var(--main-color1);
-    background-color: var(--main-color1);
+    color: rgb(229 231 235/1);
+    border: 2px solid var(--neutral-color1);
+    background-color: var(--neutral-color1);
 }

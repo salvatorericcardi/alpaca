@@ -1,5 +1,3 @@
-confirm("Do you want to clear localStorage") ? localStorage.clear() : null
-
 // globals
 var getCanvas
 
@@ -131,4 +129,8 @@ document.getElementById("download").addEventListener('click', () => {
     var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream")
     download.setAttribute("download", "alpaca.png")
     download.setAttribute("href", newData)
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    confirm("Do you want to clear localStorage") ? localStorage.clear() : null
 })
