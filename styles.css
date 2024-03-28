@@ -15,7 +15,12 @@
 
 body {
     padding: 2rem 6rem;
-    background-color: var(--main-color5);
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(255, 255, 255)
+      )
+      rgb(214, 219, 220);
 }
 
 header h1 {
@@ -61,6 +66,7 @@ main {
     padding: 10px 30px;
     font-weight: bold;
     column-gap: 5px;
+    border: 1px solid rgb(214, 219, 220);
     border-radius: 3px;
     font-size: 1.2rem;
     text-decoration: none;
