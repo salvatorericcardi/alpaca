@@ -9,6 +9,7 @@
 }
 
 body {
+    min-height: 100%;
     padding: 2rem 6rem;
     background: linear-gradient(
         to bottom,
@@ -22,17 +23,20 @@ header h1 {
     font-weight: 800;
     color: var(--neutral-color1);
     text-transform: uppercase;
+    text-align: center;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 #alpaca-container {
     background-color: var(--neutral-color1);
     position: relative;
+    width: 50%;
+    margin: 0 auto;
     aspect-ratio: 1 / 1;
 }
 
@@ -49,6 +53,7 @@ main {
 #buttons {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     margin: 24px 0;
     column-gap: 10px;
 }
@@ -71,11 +76,24 @@ main {
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     row-gap: 30px;
 }
 
 fieldset {
+    display: contents;
     border: none;
+}
+
+.container {
+    display: flex;
+    max-width: 100%;
+    column-gap: 10px;
+}
+
+.arrow {
+    padding: 10px;
+    cursor: pointer;
 }
 
 .styles-fieldset {
@@ -87,17 +105,18 @@ legend {
     text-transform: uppercase;
     font-weight: 800;
     margin: 10px 0;
+    text-align: center;
 }
 
 .input-container {
     display: flex;
+    max-width: 100%;
+    overflow: auto;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px 10px;
-}
-
-.input-group {
-    width: auto;
+    flex-wrap: nowrap;
+    column-gap: 10px;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 input[type='radio'], input[type="checkbox"] {
@@ -105,6 +124,9 @@ input[type='radio'], input[type="checkbox"] {
 }
 
 label {
+    display: inline-block;
+    white-space: nowrap;
+    width: auto;
     padding: 10px 30px;
     color: var(--neutral-color1);
     background-color: rgb(229 231 235/1);
@@ -126,4 +148,29 @@ label.selected {
     color: rgb(229 231 235/1);
     border: 2px solid var(--neutral-color1);
     background-color: var(--neutral-color1);
+}
+
+@media (max-width: 1024px) {
+    #alpaca-container {
+        width: 75%;
+    }
+
+    .arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    #alpaca-container {
+        width: 100%;
+    }
+
+    #buttons {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
 }

@@ -9,10 +9,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     </head>
     <body>
-        <header id="header">
-            <h1>Alpaca generator</h1>
-        </header>
         <main id="main">
+            <header id="header">
+                <h1>Alpaca generator</h1>
+            </header>
             <section class="section">
                 <div id="alpaca-container">
                     <img id="backgrounds" src="">
@@ -246,79 +246,87 @@
                     </fieldset>
                     <fieldset id="backgrounds-style" class="styles-fieldset">
                         <legend>Backgrounds Style</legend>
-                        <div class="input-container">
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="blue50-backgrounds">
-                                <label class="styles backgrounds" for="blue50-backgrounds">Blue 50</label>
+                        <div class="container">
+                            <button class="arrow">
+                                <i class="fa-solid fa-arrow-left left"></i>
+                            </button>
+                            <div class="input-container">
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="blue50-backgrounds">
+                                    <label class="styles backgrounds" for="blue50-backgrounds">Blue 50</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="blue60-backgrounds">
+                                    <label class="styles backgrounds" for="blue60-backgrounds">Blue 60</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="blue70-backgrounds">
+                                    <label class="styles backgrounds" for="blue70-backgrounds">Blue 70</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="darkblue30-backgrounds">
+                                    <label class="styles backgrounds" for="darkblue30-backgrounds">Darkblue 30</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="darkblue50-backgrounds">
+                                    <label class="styles backgrounds" for="darkblue50-backgrounds">Darkblue 50</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="darkblue70-backgrounds">
+                                    <label class="styles backgrounds" for="darkblue70-backgrounds">Darkblue 70</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="green50-backgrounds">
+                                    <label class="styles backgrounds" for="green50-backgrounds">Green 50</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="green60-backgrounds">
+                                    <label class="styles backgrounds" for="green60-backgrounds">Green 60</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="green70-backgrounds">
+                                    <label class="styles backgrounds" for="green70-backgrounds">Green 70</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="grey40-backgrounds">
+                                    <label class="styles backgrounds" for="grey40-backgrounds">Grey 40</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="grey70-backgrounds">
+                                    <label class="styles backgrounds" for="grey70-backgrounds">Grey 70</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="grey80-backgrounds">
+                                    <label class="styles backgrounds" for="grey80-backgrounds">Grey 80</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="red50-backgrounds">
+                                    <label class="styles backgrounds" for="red50-backgrounds">Red 50</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="red60-backgrounds">
+                                    <label class="styles backgrounds" for="red60-backgrounds">Red 60</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="red70-backgrounds">
+                                    <label class="styles backgrounds" for="red70-backgrounds">Red 70</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="yellow50-backgrounds">
+                                    <label class="styles backgrounds" for="yellow50-backgrounds">Yellow 50</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="yellow60-backgrounds">
+                                    <label class="styles backgrounds" for="yellow60-backgrounds">Yellow 60</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="radio" name="backgrounds" id="yellow70-backgrounds">
+                                    <label class="styles backgrounds" for="yellow70-backgrounds">Yellow 70</label>
+                                </div>
                             </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="blue60-backgrounds">
-                                <label class="styles backgrounds" for="blue60-backgrounds">Blue 60</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="blue70-backgrounds">
-                                <label class="styles backgrounds" for="blue70-backgrounds">Blue 70</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="darkblue30-backgrounds">
-                                <label class="styles backgrounds" for="darkblue30-backgrounds">Darkblue 30</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="darkblue50-backgrounds">
-                                <label class="styles backgrounds" for="darkblue50-backgrounds">Darkblue 50</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="darkblue70-backgrounds">
-                                <label class="styles backgrounds" for="darkblue70-backgrounds">Darkblue 70</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="green50-backgrounds">
-                                <label class="styles backgrounds" for="green50-backgrounds">Green 50</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="green60-backgrounds">
-                                <label class="styles backgrounds" for="green60-backgrounds">Green 60</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="green70-backgrounds">
-                                <label class="styles backgrounds" for="green70-backgrounds">Green 70</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="grey40-backgrounds">
-                                <label class="styles backgrounds" for="grey40-backgrounds">Grey 40</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="grey70-backgrounds">
-                                <label class="styles backgrounds" for="grey70-backgrounds">Grey 70</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="grey80-backgrounds">
-                                <label class="styles backgrounds" for="grey80-backgrounds">Grey 80</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="red50-backgrounds">
-                                <label class="styles backgrounds" for="red50-backgrounds">Red 50</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="red60-backgrounds">
-                                <label class="styles backgrounds" for="red60-backgrounds">Red 60</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="red70-backgrounds">
-                                <label class="styles backgrounds" for="red70-backgrounds">Red 70</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="yellow50-backgrounds">
-                                <label class="styles backgrounds" for="yellow50-backgrounds">Yellow 50</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="yellow60-backgrounds">
-                                <label class="styles backgrounds" for="yellow60-backgrounds">Yellow 60</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="radio" name="backgrounds" id="yellow70-backgrounds">
-                                <label class="styles backgrounds" for="yellow70-backgrounds">Yellow 70</label>
-                            </div>
+                            <button class="arrow">
+                                <i class="fa-solid fa-arrow-right right"></i>
+                            </button>
                         </div>
                     </fieldset>
                 </form>
