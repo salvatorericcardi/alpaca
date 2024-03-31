@@ -165,9 +165,8 @@ document.getElementById("random").addEventListener("click", () => {
 
 // html2canvas on dom content loaded
 document.addEventListener("DOMContentLoaded", () => {
-    html2canvas(document.getElementById("alpaca-container"), {
-        backgroundColor: null
-    }).then(canvas => getCanvas = canvas)
+    html2canvas(document.getElementById("alpaca-container"))
+    .then(canvas => getCanvas = canvas)
 })
 
 // download button
