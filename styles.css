@@ -42,12 +42,8 @@ main {
 
 #alpaca-container img {
     position: absolute;
-    bottom: 0;
-    left: -10%;
     max-width: 100%;
     max-height: 100%;
-    transform: scale(.9);
-    transform-origin: bottom;
 }
 
 #buttons {
@@ -150,6 +146,7 @@ label.selected {
     background-color: var(--neutral-color1);
 }
 
+/* tablet and smartphone devices */
 @media (max-width: 1024px) {
     #alpaca-container {
         width: 75%;
@@ -160,6 +157,7 @@ label.selected {
     }
 }
 
+/* smartphone devices */
 @media (max-width: 640px) {
     #alpaca-container {
         width: 100%;
