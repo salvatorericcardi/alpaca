@@ -58,6 +58,7 @@ main {
     display: flex;
     flex-direction: row;
     background-color: var(--neutral-color2);
+    color: var(--neutral-color1);
     border: none;
     padding: 10px 30px;
     font-weight: bold;
