@@ -160,7 +160,7 @@ document.getElementById("random").addEventListener("click", () => {
         lastAlpaca[key] = alpaca[key][randomAlpaca(alpaca[key])]
         document.getElementById(key).src = `images/${key}/${lastAlpaca[key]}.png`
 
-        document.querySelector(`input[name='${key}']#${lastAlpaca[key]}-${key}`).setAttribute("checked", true)
+        document.querySelector(`input[name='${key}']#${lastAlpaca[key]}-${key}`).checked = true
         document.querySelector(`input[name='${key}']#${lastAlpaca[key]}-${key}`).nextElementSibling.classList.add("selected")
     }
 
