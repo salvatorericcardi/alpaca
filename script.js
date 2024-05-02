@@ -115,13 +115,13 @@ for(const el of document.getElementsByClassName("styles")) {
 for(const el of document.getElementsByClassName("arrow")) {
     el.addEventListener("click", (e) => {
         e.preventDefault()
-        const parent = e.target.parentElement
+        const button = e.target
         // const arrows = document.getElementsByClassName("arrow")
 
         // if click on right arrow and not scrollend enter in the loop
-        if(e.target.classList.contains("right") /* && !isScrolledToRight(parent.previousElementSibling) */) {
+        if(button.classList.contains("right") /* && !isScrolledToRight(parent.previousElementSibling) */) {
             // move to the right
-            parent.previousElementSibling.scrollLeft += parent.previousElementSibling.getBoundingClientRect().width
+            button.previousElementSibling.scrollLeft += button.previousElementSibling.getBoundingClientRect().width
 
             /* if(arrows[0].classList.contains("disabled")) {
                 arrows[0].classList.remove("disabled")
@@ -134,9 +134,9 @@ for(const el of document.getElementsByClassName("arrow")) {
                 arrows[1].disabled = true
             } */
         // if click on left arrow and not scrollstart enter in the loop
-        } else if (e.target.classList.contains("left") /* && Math.abs(parent.nextElementSibling.scrollLeft) >= 1 */) {
+        } else if (button.classList.contains("left") /* && Math.abs(parent.nextElementSibling.scrollLeft) >= 1 */) {
             // move to the left
-            parent.nextElementSibling.scrollLeft -= parent.nextElementSibling.getBoundingClientRect().width
+            button.nextElementSibling.scrollLeft -= button.nextElementSibling.getBoundingClientRect().width
 
             /* if(arrows[1].classList.contains("disabled")) {
                 arrows[1].classList.remove("disabled")
