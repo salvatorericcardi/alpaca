@@ -2,9 +2,8 @@ const isSelected = label => label.classList.contains("selected")
 const isChecked = label => label.previousElementSibling.checked
 const randomAlpaca = key => Math.floor(Math.random() * key.length)
 
-const update = async () => {
-    const options = { logging: false }
-    await html2canvas(document.getElementById("alpaca-container"), options).then(canvas => {
+const update = (container) => {
+    html2canvas(container).then(canvas => {
         let imageData = canvas.toDataURL("image/jpeg")
         const download = document.getElementById("download")
 
@@ -113,7 +112,7 @@ for(const el of document.getElementsByClassName("styles")) {
             lastAlpaca[e.target.classList[1]] = e.target.previousElementSibling.id
         }
 
-        update()
+        update(document.getElementById("alpaca-container"))
     })
 }
 
@@ -170,10 +169,10 @@ document.getElementById("random").addEventListener("click", () => {
         document.querySelector(`input[name='${key}']#${lastAlpaca[key]}-${key}`).nextElementSibling.classList.add("selected")
     }
 
-    update()
+    update(document.getElementById("alpaca-container"))
 })
 
 // html2canvas on dom content loaded
-document.addEventListener("DOMContentLoaded", () => {
-    update()
+document.addEventListener("load", () => {
+    update(document.getElementById("alpaca-container"))
 })
