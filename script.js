@@ -2,14 +2,13 @@ const isSelected = label => label.classList.contains("selected")
 const isChecked = label => label.previousElementSibling.checked
 const randomAlpaca = key => Math.floor(Math.random() * key.length)
 
-const update = () => {
+const update = async () => {
     const options = { logging: false }
-    html2canvas(document.getElementById("alpaca-container"), options).then(canvas => {
+    await html2canvas(document.getElementById("alpaca-container"), options).then(canvas => {
         let imageData = canvas.toDataURL("image/jpeg")
         const download = document.getElementById("download")
 
         // Now browser starts downloading it instead of just showing it
-        imageData = imageData.replace(/^data:image\/jpeg/, "data:application/octet-stream")
         download.setAttribute("download", "alpaca.jpeg")
         download.setAttribute("href", imageData)
     })   
