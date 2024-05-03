@@ -3,20 +3,20 @@ const isChecked = label => label.previousElementSibling.checked
 const randomAlpaca = key => Math.floor(Math.random() * key.length)
 
 const update = () => {
-    html2canvas(document.getElementById("alpaca-container")).then(canvas => {
-        const imageData = canvas.toDataURL("image/jpeg")
+    const options = { logging: false }
+    html2canvas(document.getElementById("alpaca-container"), options).then(canvas => {
+        let imageData = canvas.toDataURL("image/jpeg")
         const download = document.getElementById("download")
 
         // Now browser starts downloading it instead of just showing it
-        const newData = imageData.replace(/^data:image\/jpeg/, "data:application/octet-stream")
+        imageData = imageData.replace(/^data:image\/jpeg/, "data:application/octet-stream")
         download.setAttribute("download", "alpaca.jpeg")
-        download.setAttribute("href", newData)
+        download.setAttribute("href", imageData)
     })   
 }
 
 const reset = () => {
     const inputs = document.querySelectorAll("input[type='radio']")
-    
     for(const input of inputs) {
         if(input.checked && input.nextElementSibling.classList.contains("selected")) {
             input.checked = false
