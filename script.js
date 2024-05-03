@@ -1,11 +1,20 @@
-// globals
-var getCanvas
-
 const isSelected = label => label.classList.contains("selected")
 const isChecked = label => label.previousElementSibling.checked
 const randomAlpaca = key => Math.floor(Math.random() * key.length)
 
-const resetAlpaca = () => {
+const update = () => {
+    html2canvas(document.getElementById("alpaca-container")).then(canvas => {
+        const imageData = canvas.toDataURL("image/jpeg")
+        const download = document.getElementById("download")
+
+        // Now browser starts downloading it instead of just showing it
+        const newData = imageData.replace(/^data:image\/jpeg/, "data:application/octet-stream")
+        download.setAttribute("download", "alpaca.jpeg")
+        download.setAttribute("href", newData)
+    })   
+}
+
+const reset = () => {
     const inputs = document.querySelectorAll("input[type='radio']")
     
     for(const input of inputs) {
@@ -105,9 +114,7 @@ for(const el of document.getElementsByClassName("styles")) {
             lastAlpaca[e.target.classList[1]] = e.target.previousElementSibling.id
         }
 
-        html2canvas(document.getElementById("alpaca-container")).then(canvas => {
-            getCanvas = canvas
-        })
+        update()
     })
 }
 
@@ -154,7 +161,7 @@ for(const el of document.getElementsByClassName("arrow")) {
 
 // random alpaca button
 document.getElementById("random").addEventListener("click", () => {
-    resetAlpaca()
+    reset()
 
     for(const key of Object.keys(alpaca)) {
         lastAlpaca[key] = alpaca[key][randomAlpaca(alpaca[key])]
@@ -164,26 +171,10 @@ document.getElementById("random").addEventListener("click", () => {
         document.querySelector(`input[name='${key}']#${lastAlpaca[key]}-${key}`).nextElementSibling.classList.add("selected")
     }
 
-    html2canvas(document.getElementById("alpaca-container")).then(canvas => {
-        getCanvas = canvas
-    })
+    update()
 })
 
 // html2canvas on dom content loaded
 document.addEventListener("DOMContentLoaded", () => {
-    html2canvas(document.getElementById("alpaca-container"))
-    .then(canvas => {
-        getCanvas = canvas
-    })
-})
-
-// download button
-document.getElementById("download").addEventListener('click', () => {
-    const imageData = getCanvas.toDataURL("image/png")
-    const download = document.getElementById("download")
-
-    // Now browser starts downloading it instead of just showing it
-    var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream")
-    download.setAttribute("download", "alpaca.png")
-    download.setAttribute("href", newData)
+    update()
 })
