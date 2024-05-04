@@ -4,7 +4,7 @@ const randomAlpaca = key => Math.floor(Math.random() * key.length)
 
 const update = (container) => {
     html2canvas(container).then(canvas => {
-        let imageData = canvas.toDataURL("image/jpeg")
+        const imageData = canvas.toDataURL("image/jpeg")
         const download = document.getElementById("download")
 
         // Now browser starts downloading it instead of just showing it
