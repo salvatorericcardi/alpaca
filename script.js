@@ -3,14 +3,12 @@ const isChecked = label => label.previousElementSibling.checked
 const randomAlpaca = key => Math.floor(Math.random() * key.length)
 
 const update = (container) => {
+    const download = document.getElementById("download")
     html2canvas(container).then(canvas => {
         const imageData = canvas.toDataURL("image/jpeg")
-        const download = document.getElementById("download")
-
-        // Now browser starts downloading it instead of just showing it
         download.setAttribute("download", "alpaca.jpeg")
         download.setAttribute("href", imageData)
-    })   
+    })  
 }
 
 const reset = () => {
@@ -107,7 +105,9 @@ for(const el of document.getElementsByClassName("styles")) {
 
             // change alpaca image src here
             const last = e.target.classList[1] === e.target.previousElementSibling.id.split("-")[1] ? e.target.previousElementSibling.id.split("-")[0] : e.target.previousElementSibling.id.split("-").slice(0, 2).join("-")
-            document.getElementById(e.target.classList[1]).src = `images/${e.target.classList[1]}/${last}.png`
+            
+            const key = e.target.classList[1]
+            document.getElementById(key).src = `images/${key}/${last}.png`
 
             lastAlpaca[e.target.classList[1]] = e.target.previousElementSibling.id
         }
@@ -163,8 +163,9 @@ document.getElementById("random").addEventListener("click", () => {
 
     for(const key of Object.keys(alpaca)) {
         lastAlpaca[key] = alpaca[key][randomAlpaca(alpaca[key])]
+        
         document.getElementById(key).src = `images/${key}/${lastAlpaca[key]}.png`
-
+        
         document.querySelector(`input[name='${key}']#${lastAlpaca[key]}-${key}`).checked = true
         document.querySelector(`input[name='${key}']#${lastAlpaca[key]}-${key}`).nextElementSibling.classList.add("selected")
     }
